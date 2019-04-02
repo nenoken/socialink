@@ -58,12 +58,6 @@ function socialink_login_user_handler($event, $type, $entity) {
 			case "twitter":
 				socialink_twitter_authorize($entity->getGUID());
 				break;
-			case "facebook":
-				socialink_facebook_authorize($entity->getGUID());
-				break;
-			case "linkedin":
-				socialink_linkedin_authorize($entity->getGUID());
-				break;
 			case "wordpress":
 				socialink_wordpress_authorize($entity->getGUID());
 				break;
