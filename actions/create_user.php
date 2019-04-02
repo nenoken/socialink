@@ -9,21 +9,8 @@ if (!elgg_is_logged_in() && !empty($_SESSION["socialink_token"])) {
 	$email = get_input("email");
 	
 	switch ($network) {
-		case "twitter":
-			$user = socialink_twitter_create_user($token, $email);
-			
-			break;
-		case "linkedin":
-			$user = socialink_linkedin_create_user($token);
-			
-			break;
-		case "facebook":
-			$user = socialink_facebook_create_user($token);
-			
-			break;
 		case "wordpress":
 			$user = socialink_wordpress_create_user($token);
-			
 			break;
 		default:
 			register_error(elgg_echo("socialink:actions:create_user:error:network"));
@@ -58,4 +45,4 @@ if (!elgg_is_logged_in() && !empty($_SESSION["socialink_token"])) {
 }
 
 forward($forward_url);
-	
+?>
