@@ -21,12 +21,8 @@ function socialink_init() {
 	
 	// register classes
 	elgg_register_classes(dirname(__FILE__) . "/vendors/oauth/classes");
-	elgg_register_class("LinkedIn", dirname(__FILE__) . "/vendors/simple_linkedin/linkedin_3.1.1.class.php");
 	
 	// register SociaLink libraries
-	elgg_register_library("socialink:facebook", dirname(__FILE__) . "/lib/networks/facebook.php");
-	elgg_register_library("socialink:linkedin", dirname(__FILE__) . "/lib/networks/linkedin.php");
-	elgg_register_library("socialink:twitter", dirname(__FILE__) . "/lib/networks/twitter.php");
 	elgg_register_library("socialink:wordpress", dirname(__FILE__) . "/lib/networks/wordpress.php");
 	
 	// extend CSS
@@ -59,16 +55,6 @@ function socialink_init() {
 	// load necesary files
 	socialink_load_networks();
 	
-	// twitter in
-	if (elgg_is_active_plugin("thewire") && socialink_is_available_network("twitter")) {
-		$setting = elgg_get_plugin_setting("twitter_allow_in", "socialink");
-		
-		switch ($setting) {
-			case "fifteenmin":
-			case "halfhour":
-				elgg_register_plugin_hook_handler("cron", $setting, "socialink_twitter_in_cron_hook");
-				break;
-		}
 	}
 }
 	
