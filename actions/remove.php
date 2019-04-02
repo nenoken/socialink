@@ -25,3 +25,4 @@ if (socialink_is_supported_network($service)) {
 }
 
 forward(REFERER);
+?>
