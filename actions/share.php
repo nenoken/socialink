@@ -16,3 +16,4 @@ if ($user_guid = elgg_get_logged_in_user_guid()) {
 }
 
 exit();
+?>
